@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { client } from "../sanity/lib/client";
+import { client } from "@/sanity/lib/client";
 import { Post } from "@/sanity/types";
 
 export const revalidate = 60;
