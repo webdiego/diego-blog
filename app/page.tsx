@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { Post } from "./lib/interface";
-import { client } from "./lib/sanity";
+import { client } from "../sanity/lib/client";
+import { Post } from "@/sanity/types";
 
 export const revalidate = 60;
 async function getData() {

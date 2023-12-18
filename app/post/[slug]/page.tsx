@@ -1,6 +1,6 @@
-import { Post } from "@/app/lib/interface";
-import { client } from "@/app/lib/sanity";
-import { urlFor } from "@/app/lib/sanityImageUrl";
+import { Post } from "@/sanity/types";
+import { client } from "@/sanity/lib/client";
+import { urlFor } from "@/sanity/lib/sanityImageUrl";
 import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 
