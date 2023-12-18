@@ -3,6 +3,8 @@ import { client } from "@/sanity/lib/client";
 import { Post } from "@/sanity/types";
 
 export const revalidate = 60;
+export const dynamic = "force-dynamic";
+
 async function getData() {
   const query = `*[_type == "post"]`;
 
