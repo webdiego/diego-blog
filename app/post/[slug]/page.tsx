@@ -1,5 +1,5 @@
 import { Post } from "@/sanity/types";
-import { client } from "@/sanity/lib/client";
+import { sanityClient } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/sanityImageUrl";
 import { PortableText } from "@portabletext/react";
 import Image from "next/image";
@@ -7,7 +7,7 @@ import Image from "next/image";
 async function getData(slug: string) {
   const query = `*[_type == "post" && slug.current == "${slug}"][0]`;
 
-  const data = await client.fetch(query);
+  const data = await sanityClient.fetch(query);
 
   return data;
 }

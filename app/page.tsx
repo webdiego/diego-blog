@@ -1,18 +1,15 @@
 import Link from "next/link";
-import { client } from "@/sanity/lib/client";
+import { sanityClient } from "@/sanity/lib/client";
 import { Post } from "@/sanity/types";
-
-export const revalidate = 60;
-export const dynamic = "force-dynamic";
 
 async function getData() {
   const query = `*[_type == "post"]`;
 
-  const data = await client.fetch(query);
-
+  const data = await sanityClient.fetch(query);
   console.log(data);
   return data;
 }
+export const revalidate = 60; // revalidate this page every 60 seconds
 
 export default async function IndexPage() {
   const data = (await getData()) as Post[];
